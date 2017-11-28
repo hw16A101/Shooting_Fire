@@ -50,7 +50,7 @@ void Update()
         }
     }
     
-    //大砲の移動
+    //大砲の移動　hw16a216 山本
     cannonPos.y += 100 * Time::deltaTime * upDown;
     if(cannonPos.y > -70){
         upDown *= -1;
