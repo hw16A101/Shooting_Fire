@@ -26,8 +26,12 @@ void Start()
     targetRect = Rect(80, -140, 40, 40);
     bulletPos.x = -999;
     score = 0;
+<<<<<<< HEAD
     
     
+=======
+     PlayBGM("bgm_maoudamashii_8bit07.mp3");//hw16a216 山本BGMの追加
+>>>>>>> 336f33d5988a6ba0d1b88fa607ef581669a8bbf3
 }
 
 // 1/60秒ごとに呼ばれる関数です。モデルの更新と画面の描画を行います。
@@ -45,6 +49,7 @@ void Update()
         
         if (bulletPos.x > 320)
             bulletPos.x = -999;
+
 
         // ターゲットと弾の当たり判定
         Rect bulletRect(bulletPos, Vector2(32, 20));
