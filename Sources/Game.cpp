@@ -54,7 +54,7 @@ void Update()
 
     // 雲の描画
     DrawImage("cloud1.png", cloudPos);
-    cloudPos.x += 100 *Time::deltaTime;
+    cloudPos.x += 100 *Time::deltaTime;// hw16a216山本　雲の移動を追加
     if(cloudPos.x >400){
         cloudPos.x = -545;
     }
