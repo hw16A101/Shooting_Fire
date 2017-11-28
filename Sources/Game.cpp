@@ -38,7 +38,10 @@ void Update()
 
     // 弾の移動
     if (bulletPos.x > -999) {
-        bulletPos.x += 10 * Time::deltaTime;
+        bulletPos.x += 90 * Time::deltaTime;
+        
+        if (bulletPos.x > 320)
+            bulletPos.x = -999;
 
         // ターゲットと弾の当たり判定
         Rect bulletRect(bulletPos, Vector2(32, 20));
