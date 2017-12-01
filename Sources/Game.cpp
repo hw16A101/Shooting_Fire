@@ -8,7 +8,8 @@
 // TODO: スコアのサイズを大きくする。(E)
 // TODO: スコアを100点ずつ加算するようにし、5桁の表示に変える。(F)
 // TODO: PlayBGM()関数を使って、BGMを再生する。(G)
-// TODO: PlaySE()関数を使って、弾の発射時とターゲットに当たった時にSEを再生する。(H)(HW16A048 桂脩也)
+// TODO: PlaySE()関数を使って、弾の発射時とターゲットに当たった時にSEを再生する。(H) (HW16A048 桂脩也)
+>>>>>>> f82f34b6a1dee4a7edfa11209d4b78efd8fb795a
 
 
 Vector2 cloudPos;       //!< 雲の位置
@@ -27,14 +28,11 @@ void Start()
     targetRect = Rect(80, -140, 40, 40);
     bulletPos.x = -999;
     score = 0;
-<<<<<<< HEAD
-<<<<<<< HEAD
-    
-    
-=======
+
+
      PlayBGM("bgm_maoudamashii_8bit07.mp3");//hw16a216 山本BGMの追加
->>>>>>> 336f33d5988a6ba0d1b88fa607ef581669a8bbf3
-=======
+
+
     upDown = 1;
 >>>>>>> 468fdb54e8402fbaaabdc4ca413a5e9d5509e40c
 }
@@ -45,11 +43,10 @@ void Update()
     // 弾の発射
     if (bulletPos.x <= -999 && Input::GetKeyDown(KeyMask::Space)) {
         bulletPos = cannonPos + Vector2(50, 10);
-        
-<<<<<<< HEAD
-=======
-        
->>>>>>> d7c9bdd0a1526c57b71216c8c791a8223a6846c1
+
+
+        PlaySound("se_maoudamashii_system20.mp3");
+
     }
 
     // 弾の移動
@@ -65,11 +62,7 @@ void Update()
         if (targetRect.Overlaps(bulletRect)) {
             score += 100;         // スコアの加算 1から100へ hw16a101 須賀
             bulletPos.x = -999; // 弾を発射可能な状態に戻す
-<<<<<<< HEAD
-            
-=======
            
->>>>>>> d7c9bdd0a1526c57b71216c8c791a8223a6846c1
         }
     }
     
