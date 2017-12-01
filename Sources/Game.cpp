@@ -16,6 +16,7 @@ Vector2 cannonPos;      //!< 砲台の位置
 Vector2 bulletPos;      //!< 弾の位置
 Rect    targetRect;     //!< ターゲットの矩形
 int     score;          //!< スコア
+int     upDown;
 
 
 // ゲーム開始時に呼ばれる関数です。
@@ -27,11 +28,15 @@ void Start()
     bulletPos.x = -999;
     score = 0;
 <<<<<<< HEAD
+<<<<<<< HEAD
     
     
 =======
      PlayBGM("bgm_maoudamashii_8bit07.mp3");//hw16a216 山本BGMの追加
 >>>>>>> 336f33d5988a6ba0d1b88fa607ef581669a8bbf3
+=======
+    upDown = 1;
+>>>>>>> 468fdb54e8402fbaaabdc4ca413a5e9d5509e40c
 }
 
 // 1/60秒ごとに呼ばれる関数です。モデルの更新と画面の描画を行います。
@@ -59,10 +64,23 @@ void Update()
             
         }
     }
+    
+    //大砲の移動　hw16a216 山本
+    cannonPos.y += 100 * Time::deltaTime * upDown;
+    if(cannonPos.y > -70){
+        upDown *= -1;
+        cannonPos.y = -70;
+    }
+    if(cannonPos.y < -145){
+        upDown *= -1;
+        cannonPos.y = -140;
+    }
+
 
     // 背景の描画
     Clear(Color::cyan);
     FillRect(Rect(-320, -240, 640, 100), Color::green);
+    
 
     // 雲の描画
     DrawImage("cloud1.png", cloudPos);
@@ -75,6 +93,7 @@ void Update()
     // 砲台の描画
     FillRect(Rect(cannonPos.x-100, -140, 20, 100), Color::blue);
     DrawImage("cannon.png", cannonPos);
+    
 
     // ターゲットの描画
     FillRect(Rect(targetRect.x+100, -140, 40, 40), Color::red);
