@@ -46,6 +46,10 @@ void Update()
     if (bulletPos.x <= -999 && Input::GetKeyDown(KeyMask::Space)) {
         bulletPos = cannonPos + Vector2(50, 10);
         
+<<<<<<< HEAD
+=======
+        
+>>>>>>> d7c9bdd0a1526c57b71216c8c791a8223a6846c1
     }
 
     // 弾の移動
@@ -61,7 +65,11 @@ void Update()
         if (targetRect.Overlaps(bulletRect)) {
             score += 100;         // スコアの加算 1から100へ hw16a101 須賀
             bulletPos.x = -999; // 弾を発射可能な状態に戻す
+<<<<<<< HEAD
             
+=======
+           
+>>>>>>> d7c9bdd0a1526c57b71216c8c791a8223a6846c1
         }
     }
     
